@@ -19,3 +19,8 @@ mongo.exe <br>
 
 npm start                 // iniciar aplicación<br>
 
+
+
+
+You can also read the documentation through Postman
+https://documenter.getpostman.com/view/2966962/apio/7E8hvsX
