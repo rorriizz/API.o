@@ -13,24 +13,20 @@ API.o is a usefull tool to develop aplications about vegeterian lifestyle, this 
 
 Para ejecutar la aplicación se deben seguir los siguientes pasos:
 
-```
-
   :octocat:   git clone
   :computer:  npm install               // instalar dependencias
-  
-```
+
 
 Para conectarse a la base de datos es necesario abrir:<br>
 
-```
-  :leaves:    mongod.exe <br>
-  :leaves:    mongo.exe <br>
+  :leaves:    mongod.exe
+  :leaves:    mongo.exe
 
-  :bear:      npm start                 // iniciar aplicación<br>
-
-```
+  :bear:      npm start                 // iniciar aplicación
 
 
 
 You can also read the documentation through Postman
+```
 https://documenter.getpostman.com/view/2966962/apio/7E8hvsX
+```
