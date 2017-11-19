@@ -1,13 +1,17 @@
 var mongoose = require('mongoose');
 var Platillo = mongoose.model('Platillo');
 var Restaurante = mongoose.model('Restaurante');
+var Comentario = mongoose.model('Comentario');
 
 //POST restaurante
 exports.addRestaurante=function(req,res,next){
-	console.log('POST/restaurante');
+	console.log('POST/restaurantes');
 	var restaurante = new Restaurante({
 		nombreR : req.body.nombreR,
+		telefono: req.body.telefono,
 		direccion : req.body.direccion,
+		lat: req.body.lat,
+		lng: req.body.lng,
 		horario : req.body.horario,
 		servicioDomicilio: req.body.servicioDomicilio
 	});
@@ -18,12 +22,12 @@ exports.addRestaurante=function(req,res,next){
 };
 //GET restaurante
 exports.getRestaurante=function(req, res, next){
-  	console.log('GET/restaurante');
+  	console.log('GET/restaurantes');
   	Restaurante.find(function(err,platillos){
   		if(err){
   			res.send(500, err.message);
   		}else{
-  			console.log('GET/restaurante');
+  			console.log('GET/restaurantes');
   			res.status(200).jsonp(platillos);
   		}		
   	});
@@ -35,7 +39,8 @@ exports.addplatillo=function(req,res,next){
 		nombreP :req.body.nombreP,
 		precio: req.body.precio,
 		categoria: req.body.categoria,
-		restaurante: req.body.restaurante
+		restaurante: req.body.restaurante//,
+		//comentario: req.body.comentario //**************************************************
 	});
 	platillo.save(function(err,platillo){
 		if(err) return res.send(500,err.message);
@@ -127,12 +132,15 @@ exports.getByRestaurante=function(req,res,next){
 };
 //PUT /restaurantes/:nombre
 exports.updateRestaurante=function(req, res, next){
-	console.log('PUT/restaurantes/:nombreR');
+	console.log('PUT/restaurantes/:id');
 	console.log(req.body);
 		Restaurante.update({_id: req.params.id},
-		{$set:{	nombreR:req.body.nombreR, 
-				direccion:req.body.direccion,
-				horario: req.body.horario,
+		{$set:{	nombreR : req.body.nombreR,
+				telefono: req.body.telefono,
+				direccion : req.body.direccion,
+				lat: req.body.lat,
+				lng: req.body.lng,
+				horario : req.body.horario,
 				servicioDomicilio: req.body.servicioDomicilio}},function(err,platillos){
 		if(err){
 			res.send(500,err.message);
@@ -166,20 +174,19 @@ exports.deleteRestaurante = function(req,res,next){
   					res.send(500, err.message);
   				}else{
   					console.log('DELETE/restaurantes/:id');
+  					Restaurante.remove({_id: req.params.id},function(err,platillos){
+						if(err){
+							res.send(500,err.message);
+						}else{
+							console.log('DELETE/restaurantes/:id');
+							res.status(200).jsonp(platillos);
+						}
+					});
   				}		
   			});
 		}
 	});
-	Restaurante.remove({_id: req.params.id},function(err,platillos){
-		if(err){
-			res.send(500,err.message);
-		}else{
-			console.log('DELETE/restaurantes/:id');
-			res.status(200).jsonp(platillos);
-		}
-	});
 };
-
 //GET /restaurantes/:id/platillos
 exports.getPlatillosByRestaurante=function(req,res,next){
 	console.log('GET/restaurantes/:id/platillos');
@@ -199,12 +206,70 @@ exports.getPlatillosByRestaurante=function(req,res,next){
 		}
 	});
 };
+//POST comentario
+exports.addComentario=function(req,res,next){
+	console.log('POST/platillos/:id');
+	var comentario = new Comentario({
+		critica :req.body.critica,
+		platillo: req.body.platillo
+	});
+	comentario.save(function(err,platillo){
+		if(err) return res.send(500,err.message);
+		res.status(200).jsonp(platillo);
+	});
+};
+//GET comentarios
+exports.getComentarios=function(req,res,next){
+	console.log('GET/comentarios');	
+	console.log(req.params.id);
+	Comentario.find(function(err,comentarios){
+  		if(err){
+  			res.send(500, err.message);
+  		}else{
+  			console.log('GET/comentarios');
+  			//res.status(200).jsonp(comentarios);
+  			Comentario.populate(comentarios, {path: "platillo"},function(err, comentarios){
+        	res.status(200).jsonp(comentarios);
+        	}); 
+  		}		
+  	});
+};
+//DELETE comentarios/:id
+exports.deleteComentario=function(req, res, next){
+	console.log('DELETE/comentarios/:id');
+	console.log(req.params.id);
+	Comentario.remove({_id: req.params.id},function(err,comentarios){
+  		if(err){
+  			res.send(500, err.message);
+  		}else{
+  			console.log('DELETE/comentarios');
+  			Comentario.populate(comentarios, {path: "platillo"},function(err, comentarios){
+        	res.status(200).jsonp(comentarios);
+        	}); 
+  		}		
+  	});
+};
+//GET comentarios por platillo
+exports.getComentariosById=function(req,res,next){
+	console.log('GET/comentarios/:id');	
+	console.log(req.params.id);
+	Comentario.find({_id: req.params.id},function(err,platillos){
+  		if(err){
+  			res.send(500, err.message);
+  		}else{
+  			console.log('GET/platillos');
+  			Comentario.populate(platillos, {path: "platillo"},function(err, platillos){
+        	res.status(200).jsonp(platillos);
+        	}); 
+  		}
+  	});
+};
 //Get Platillos by categoría
 exports.getPlatillosByCategoria=function(req, res, next){
-	console.log('GET/platillos/:categoria');	
+	console.log('GET/platillosC/:categoria');	
 	console.log(req.params.categoria);
 	console.log(Platillo.categoria);
-	Platillo.find({categoria: 'Italiana'/*req.params.categoria*/},function(err,platillos){
+	Platillo.find({categoria: req.params.categoria},function(err,platillos){
   		if(err){
   			res.send(500, err.message);
   		}else{

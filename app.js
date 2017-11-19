@@ -16,7 +16,7 @@ mongoose.connect('mongodb://localhost/Libro', function(err, res){
 	if(err){
 		throw err;
 	}
-	console.log('conectado a la base de datos');
+	console.log('conectado a la base de datos de API.o');
 });
 
 // view engine setup
