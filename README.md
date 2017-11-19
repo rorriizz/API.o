@@ -2,7 +2,7 @@
 
 ## Introduction
 
-What does your API do? API.o is an interactive guide to vegetarian-friendly restaurants and cafes. API.o also offers a JSON API, allowing developers to create applications around the services offered by API.o. There are methods to search for establishments and food around Ensenada.
+API.o is an interactive guide to vegetarian-friendly restaurants and cafes. API.o also offers a JSON API, allowing developers to create applications around the services offered by API.o. There are methods to search for establishments and food around Ensenada.
 
 ## Overview
 
