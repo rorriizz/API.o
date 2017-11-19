@@ -1,15 +1,30 @@
-# practica-2-ARR
-Práctica 2: Introducción a MongoDB<br>
+# API.o
 
-Se implemena el API REST con un modelo Autor en la base de datos, el cuál tenga una relación con el modelo Libro. Siguiendo la relación simple de: Un Libro tiene un Autor, y un Autor puede tener muchos Libros.<br>
+## Introduction
 
-Para ejecutar la aplicación se deben seguir los siguientes pasos: <br>
+What does your API do? API.o is an interactive guide to vegetarian-friendly restaurants and cafes. API.o also offers a JSON API, allowing developers to create applications around the services offered by API.o. There are methods to search for establishments and food around Ensenada.
 
-git clone <br>
-npm install               // instalar dependencias<br>
-npm install multer --save // instalar middleware for handling multipart/form-data<br>
-npm start                 // iniciar aplicación<br>
+## Overview
 
-Para conectarse a la base de datos es necesario abrir:<br>
-mongod.exe <br>
-mongo.exe <br>
+API.o is a usefull tool to develop aplications about vegeterian lifestyle, this API allows you to retrieve information about entries and restaurants, and users using a well-defined set of URIs. Currently, all information is returned as JSON.
+
+
+# API.o
+
+The following steps are needed to use API.o:
+  * :octocat:   git clone
+  * :computer:  npm install               // install dependencies
+
+To connect to the Mongo DB you should run:
+  * :leaves:    mongod.exe
+  * :leaves:    mongo.exe
+
+Now it's all set to run the application:
+  * :bear:      npm start                 // start application
+
+
+
+You can also read the documentation through Postman
+```
+https://documenter.getpostman.com/view/2966962/apio/7E8hvsX
+```
