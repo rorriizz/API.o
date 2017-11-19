@@ -10,7 +10,7 @@ API.o is a usefull tool to develop aplications about vegeterian lifestyle, this 
 
 Para ejecutar la aplicación se deben seguir los siguientes pasos: <br>
 
-git clone <br>
+:octocat: git clone <br>
 npm install               // instalar dependencias<br>
 
 Para conectarse a la base de datos es necesario abrir:<br>
