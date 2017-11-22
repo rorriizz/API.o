@@ -20,14 +20,17 @@ router.route('/platillos')
 
 router.route('/platillos/:id')
 	.get(PlatilloCtrl.getPlatillosById)
-	.post(upload.array(),PlatilloCtrl.addComentario)//********
 	.put(upload.array(),PlatilloCtrl.updatePlatillo)
 	.delete(PlatilloCtrl.deletePlatillo);
 
-router.route('/comentarios') //platillos/:id/comentarios')//***********************
+router.route('/platillos/:id/comentarios')
+	.get(PlatilloCtrl.getComentariosByPlatillosId)
+	.post(upload.array(),PlatilloCtrl.addComentario);
+
+router.route('/comentarios')
 	.get(PlatilloCtrl.getComentarios);
 
-router.route('/comentarios/:id') //platillos/:id/comentarios')//***********************
+router.route('/comentarios/:id')
 	.get(PlatilloCtrl.getComentariosById)
 	.delete(PlatilloCtrl.deleteComentario);
 
@@ -42,9 +45,6 @@ router.route('/restaurantes/:id')
 
 router.route('/restaurantes/:id/platillos')
 	.get(PlatilloCtrl.getPlatillosByRestaurante);
-
-router.route('/platillosC/:categoria')
-	.get(PlatilloCtrl.getPlatillosByCategoria);
 
 module.exports = router;
 
