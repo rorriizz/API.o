@@ -23,8 +23,27 @@ Now it's all set to run the application:
   * :bear:      npm start                 // start application
 
 
+## Requests:
+```
+POST localhost:3000/restaurantes
+GET localhost:3000/restaurantes
+POST localhost:3000/platillos
+GET localhost:3000/platillos
+GET localhost:3000/platillos/:id
+PUT localhost:3000/platillos/:id
+DELETE localhost:3000/platillos/:id
+PUT localhost:3000/restaurantes/:id
+DELETE localhost:3000/restaurantes/:id
+GET localhost:3000/restaurantes/:id/platillos
+GET localhost:3000/comentarios
+DELETE localhost:3000/comentarios/:id
+GET localhost:3000/comentarios/:id
+POST localhost:3000/platillos/:id/comentarios
+GET localhost:3000/platillos/:id/comentarios
+GET localhost:3000/restaurantes?Param1=value&Param2=value
+GET localhost:3000/platillos?Param1=value&Param2=value
+```
 
 You can also read the documentation through Postman
-```
-https://documenter.getpostman.com/view/2966962/apio/7E8hvsX
-```
+ * https://documenter.getpostman.com/view/2966962/apio/7E8hvsX
+
