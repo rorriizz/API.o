@@ -23,7 +23,9 @@ exports.addRestaurante=function(req,res,next){
 //GET restaurante
 exports.getRestaurante=function(req, res, next){
   	console.log('GET/restaurantes');
-  	Restaurante.find(function(err,platillos){
+  	console.log(req.query.categorias);
+  	console.log(req.query.precio);
+  	Restaurante.find(req.query,function(err,platillos){
   		if(err){
   			res.send(500, err.message);
   		}else{
@@ -39,8 +41,7 @@ exports.addplatillo=function(req,res,next){
 		nombreP :req.body.nombreP,
 		precio: req.body.precio,
 		categoria: req.body.categoria,
-		restaurante: req.body.restaurante//,
-		//comentario: req.body.comentario //**************************************************
+		restaurante: req.body.restaurante
 	});
 	platillo.save(function(err,platillo){
 		if(err) return res.send(500,err.message);
@@ -50,7 +51,10 @@ exports.addplatillo=function(req,res,next){
 //Get platillos
 exports.getplatillos=function(req, res, next){
   console.log('GET/platillos');
-  	Platillo.find({},function(err,platillos){
+  	console.log(req.query.categorias);
+  	console.log(req.query.precio);
+  	console.log(req.query);
+  	Platillo.find(req.query,function(err,platillos){
   		if(err){
   			res.send(500, err.message);
   		}else{
@@ -61,7 +65,7 @@ exports.getplatillos=function(req, res, next){
   		}		
   	});
 };
-//Get Platillos
+//Get Platillos by id
 exports.getPlatillosById=function(req, res, next){
 	console.log('GET/platillos/:id');	
 	console.log(req.params.id);
@@ -208,7 +212,7 @@ exports.getPlatillosByRestaurante=function(req,res,next){
 };
 //POST comentario
 exports.addComentario=function(req,res,next){
-	console.log('POST/platillos/:id');
+	console.log('POST/platillos/:id/comentarios');
 	var comentario = new Comentario({
 		critica :req.body.critica,
 		platillo: req.body.platillo
@@ -216,6 +220,25 @@ exports.addComentario=function(req,res,next){
 	comentario.save(function(err,platillo){
 		if(err) return res.send(500,err.message);
 		res.status(200).jsonp(platillo);
+	});
+};
+//GET /platillos/:id/comentarios
+exports.getComentariosByPlatillosId=function(req,res,next){
+	console.log('GET/platillos/:id/comentarios');
+	console.log(req.params.id);
+	Platillo.findById({_id: req.params.id},function(err,platillos){
+		if(err){
+			res.send(500, err.message);
+		}else{
+			Comentario.find({platillo:req.params.id}, function (err, comentario) {
+				if(err){
+					res.send(500, err.message);
+				}else{
+					Platillo.platillos=comentario;
+					return res.status(200).jsonp(comentario);
+				}
+			});
+		}
 	});
 };
 //GET comentarios
