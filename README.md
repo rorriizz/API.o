@@ -23,7 +23,7 @@ Now it's all set to run the application:
   * :bear:      npm start                 // start application
 
 
-# Requests:
+## Requests:
 ```
 POST localhost:3000/restaurantes
 GET localhost:3000/restaurantes
