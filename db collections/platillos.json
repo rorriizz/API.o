@@ -1,0 +1,27 @@
+{"_id":{"$oid":"5a11e8f0e02e49228869d2fc"},"nombreP":"Sandwich Vegetariano","precio":70,"categoria":"Comida rápida","restaurante":{"$oid":"5a11e4bee02e49228869d2f7"},"__v":0}
+{"_id":{"$oid":"5a11e917e02e49228869d2fd"},"nombreP":"Ensalada verde","precio":50,"categoria":"Comida rápida","restaurante":{"$oid":"5a11e4bee02e49228869d2f7"},"__v":0}
+{"_id":{"$oid":"5a11e950e02e49228869d2fe"},"nombreP":"Ensalada Mixta","precio":55,"categoria":"Comida rápida","restaurante":{"$oid":"5a11e4bee02e49228869d2f7"},"__v":0}
+{"_id":{"$oid":"5a11e964e02e49228869d2ff"},"nombreP":"Ensalada de Col","precio":50,"categoria":"Comida rápida","restaurante":{"$oid":"5a11e4bee02e49228869d2f7"},"__v":0}
+{"_id":{"$oid":"5a11ebbbe02e49228869d300"},"nombreP":"Ensalada de la casa","precio":45,"categoria":"Comida saludable","restaurante":{"$oid":"5a11e671e02e49228869d2f8"},"__v":0}
+{"_id":{"$oid":"5a11ebd4e02e49228869d301"},"nombreP":"Ensalada de colores","precio":50,"categoria":"Comida saludable","restaurante":{"$oid":"5a11e671e02e49228869d2f8"},"__v":0}
+{"_id":{"$oid":"5a11ebe2e02e49228869d302"},"nombreP":"Pimientos rellenos de verduras","precio":85,"categoria":"Comida saludable","restaurante":{"$oid":"5a11e671e02e49228869d2f8"},"__v":0}
+{"_id":{"$oid":"5a11ec17e02e49228869d303"},"nombreP":"Sandwich light","precio":50,"categoria":"Comida saludable","restaurante":{"$oid":"5a11e671e02e49228869d2f8"},"__v":0}
+{"_id":{"$oid":"5a11ec34e02e49228869d304"},"nombreP":"Chille relleno de frijoles","precio":80,"categoria":"Comida saludable","restaurante":{"$oid":"5a11e671e02e49228869d2f8"},"__v":0}
+{"_id":{"$oid":"5a11eceee02e49228869d306"},"nombreP":"Fruta de temporada","precio":55,"categoria":"Comida saludable","restaurante":{"$oid":"5a11e6d2e02e49228869d2f9"},"__v":0}
+{"_id":{"$oid":"5a11ed2de02e49228869d307"},"nombreP":"Citricos con chile","precio":50,"categoria":"Comida saludable","restaurante":{"$oid":"5a11e6d2e02e49228869d2f9"},"__v":0}
+{"_id":{"$oid":"5a11ed3de02e49228869d308"},"nombreP":"Especial de jicama y pepino","precio":50,"categoria":"Comida saludable","restaurante":{"$oid":"5a11e6d2e02e49228869d2f9"},"__v":0}
+{"_id":{"$oid":"5a11ed51e02e49228869d309"},"nombreP":"Smoothie de fresa","precio":35,"categoria":"Comida saludable","restaurante":{"$oid":"5a11e6d2e02e49228869d2f9"},"__v":0}
+{"_id":{"$oid":"5a11ed59e02e49228869d30a"},"nombreP":"Smoothie de piña con coco","precio":35,"categoria":"Comida saludable","restaurante":{"$oid":"5a11e6d2e02e49228869d2f9"},"__v":0}
+{"_id":{"$oid":"5a11ed60e02e49228869d30b"},"nombreP":"Smoothie tropical","precio":35,"categoria":"Comida saludable","restaurante":{"$oid":"5a11e6d2e02e49228869d2f9"},"__v":0}
+{"_id":{"$oid":"5a11ed6de02e49228869d30c"},"nombreP":"Jugo verde","precio":20,"categoria":"Comida saludable","restaurante":{"$oid":"5a11e6d2e02e49228869d2f9"},"__v":0}
+{"_id":{"$oid":"5a11ed75e02e49228869d30d"},"nombreP":"Jugo vampiro","precio":20,"categoria":"Comida saludable","restaurante":{"$oid":"5a11e6d2e02e49228869d2f9"},"__v":0}
+{"_id":{"$oid":"5a11ed7be02e49228869d30e"},"nombreP":"Jugo de naranja","precio":20,"categoria":"Comida saludable","restaurante":{"$oid":"5a11e6d2e02e49228869d2f9"},"__v":0}
+{"_id":{"$oid":"5a11eddee02e49228869d310"},"nombreP":"Pizza vegetariana","precio":115,"categoria":"Comida rapida","restaurante":{"$oid":"5a11e7fde02e49228869d2fa"},"__v":0}
+{"_id":{"$oid":"5a11ee65e02e49228869d311"},"nombreP":"Falafel (orden de 4)","precio":80,"categoria":"Comida arabe","restaurante":{"$oid":"5a11e881e02e49228869d2fb"},"__v":0}
+{"_id":{"$oid":"5a11eeefe02e49228869d312"},"nombreP":"Schnitzel","precio":85,"categoria":"Comida arabe","restaurante":{"$oid":"5a11e881e02e49228869d2fb"},"__v":0}
+{"_id":{"$oid":"5a11eefae02e49228869d313"},"nombreP":"Sabich","precio":70,"categoria":"Comida arabe","restaurante":{"$oid":"5a11e881e02e49228869d2fb"},"__v":0}
+{"_id":{"$oid":"5a11ef06e02e49228869d314"},"nombreP":"Hummus","precio":80,"categoria":"Comida arabe","restaurante":{"$oid":"5a11e881e02e49228869d2fb"},"__v":0}
+{"_id":{"$oid":"5a11ef11e02e49228869d315"},"nombreP":"Galilea","precio":80,"categoria":"Comida arabe","restaurante":{"$oid":"5a11e881e02e49228869d2fb"},"__v":0}
+{"_id":{"$oid":"5a11ef21e02e49228869d316"},"nombreP":"Shakshuka","precio":80,"categoria":"Comida arabe","restaurante":{"$oid":"5a11e881e02e49228869d2fb"},"__v":0}
+{"_id":{"$oid":"5a11ef29e02e49228869d317"},"nombreP":"Malabi","precio":80,"categoria":"Comida arabe","restaurante":{"$oid":"5a11e881e02e49228869d2fb"},"__v":0}
+{"_id":{"$oid":"5a14fe9bfc03ed28d4a88109"},"nombreP":"Subway Vegetariano","precio":90,"categoria":"Comida rápida","restaurante":{"$oid":"5a14fc8dfc03ed28d4a88107"},"__v":0}
